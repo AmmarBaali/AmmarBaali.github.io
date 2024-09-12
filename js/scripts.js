@@ -208,32 +208,136 @@ $(document).ready(function () {
 
 
     /********************** RSVP **********************/
-    $('#rsvp-form').on('submit', function (e) {
-        e.preventDefault();
-        var data = $(this).serialize();
+	$('#rsvp-form').on('submit', function (e) {
+		e.preventDefault();
+		var data = $(this).serialize();
 
-        $('#alert-wrapper').html(alert_markup('info', '<strong>Just a sec!</strong> We are saving your details.'));
+		$('#alert-wrapper').html(alert_markup('info', '<strong>Just a sec!</strong> We are saving your details.'));
 
-        if (MD5($('#invite_code').val()) !== 'b0e53b10c1f55ede516b240036b88f40'
-            && MD5($('#invite_code').val()) !== '2ac7f43695eb0479d5846bb38eec59cc') {
-            $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> Your invite code is incorrect.'));
-        } else {
-            $.post('https://script.google.com/macros/s/AKfycbyaBNVsbedPnvROVwx2GW6NR3fTfCzN1d13fXJmhFweSPpegNnTHB1NoNMegxoqha1C/exec', data)
-                .done(function (data) {
-                    console.log(data);
-                    if (data.result === "error") {
-                        $('#alert-wrapper').html(alert_markup('danger', data.message));
-                    } else {
-                        $('#alert-wrapper').html('');
-                        $('#rsvp-modal').modal('show');
-                    }
-                })
-                .fail(function (data) {
-                    console.log(data);
-                    $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> There is some issue with the server. '));
-                });
-        }
-    });
+		// Define an array of valid invite codes
+		var validInviteCodes = [
+			'b0e53b10c1f55ede516b240036b88f40',
+			'1ef062bf592693626c0c29cbfdd253b8',
+			'508df4cb2f4d8f80519256258cfb975f',
+			'5bd2026f128662763c532f2f4b6f2476',
+			'e35cf7b66449df565f93c607d5a81d09',
+			'5b26219f766d316ece2a3364a26c0b1c',
+			'878997bb3b505d024a587b7d2a400955',
+			'6dbc3aa07f91b537b0281ea37e38ab5c',
+			'58a59d1e6f71adfe503a7ea94fdd96fa',
+			'8527d690a06ec7bb0aec0706317e9e13',
+			'd308680e6d780f94cbf6531ff560b38a',
+			'f89c5b88fddae2e521815933c60ed742',
+			'bcba8e89b428406fcad0ad1d13c758f1',
+			'd0b518f0c9518f075240c5dc02ee441d',
+			'1f35ff3d360f942a743f5f334eb71b3d',
+			'43807fdd49d151613d7ca94f0caa544b',
+			'6d679d8aacff0d96f13c9592b77960d0',
+			'1538974980f1966094049a9cfd619b9d',
+			'60e645394bf4cba85a2de1f894d317cd',
+			'd3a8518bb4fc0084895949fc6cf0a389',
+			'12ef80caa22b768cb6f597f1812961ed',
+			'9fe705c8100ecbeeb609e5a372402c22',
+			'b6b036a949b91b7b14212fd44e310e28',
+			'70028658328c3c71ddca24240df7cf3d',
+			'af461147b0608c4b27fec9e4f47c8876',
+			'5dbdd7287f8d4b9df4192606ed4f9307',
+			'8b88ffdf8762ecea3ecb9d0b1091f4c2',
+			'19ba46fbc6e136cef474ec9458f62b3e',
+			'4f932163614ec20c6a25e1decb5a6189',
+			'4faf67757cdce20afbfdf43de7f88b53',
+			'3dc0d7af0585e19dc0b57e44d8a759b1',
+			'9d35d4af68d1096ad15343e127ce5289',
+			'78cf72377df71abd6d8f45db8abf5835',
+			'522af3a01b8aab9f47461cba9e6d4133',
+			'f67dc0f2488c87789c41ef47ca175853',
+			'1fc294c4c24adcf72d0db09fa4328061',
+			'd923212886ee843582cfcd6dda95f131',
+			'9f0abfc4a0c7c336000ab237d5f197c5',
+			'74c43b7ec689955c9c1517294e92500f',
+			'4cdddb1de7e4acf8004e425b7b7d2ec2',
+			'b6b036a949b91b7b14212fd44e310e28',
+			'dddc947374a3f6c5e3ef7b27acddda29',
+			'1ac9613839f839129173664797c6db5f',
+			'322feb33d237c08213e5f41804c958d4',
+			'9efd9bdfe3f2e3070c72944ff6a4e3af',
+			'4d02b8896e5c9cc36750408f0f25e824',
+			'546f59c48b8abbecede447d82ade6a62',
+			'82ef8af83b0416441bbfe5f6820f2d37',
+			'54dff44a024de9dad8c63c3d3f2e0ff8',
+			'ad91c48bab41c40171efbe22239fd732',
+			'b7fb6ab8060c1b877e0cedbb4680f3c9',
+			'c482a49957bb3b224ac65ffea95fa696',
+			'12ef80caa22b768cb6f597f1812961ed',
+			'bae8beeaa951902e0c2b6a4b7564b338',
+			'ce017c64a425599b5215b5de0e06e5aa',
+			'f86782eef82530d5d5cc4a91334c6e14',
+			'8f8b45848a9298a8136d6b8f1ed71d83',
+			'acd4da919df3f02a34886cade023f102',
+			'b2d3267dd31efbc378ad581b5a3a7fd4',
+			'03e546ff1332f6ad51dcf146584be69b',
+			'd3a8518bb4fc0084895949fc6cf0a389',
+			'e5db8884451f2d87f20767fdfa091b76',
+			'4cdddb1de7e4acf8004e425b7b7d2ec2',
+			'45c88cb788b3241ef73190071fa6a75d',
+			'619ac4c6eb3cdcfbbc21ae96cc3b2d35',
+			'c734ac41383556f8699935c620cfa310',
+			'cf4c97907a69e3901c0945061d2abf93',
+			'e70fed6904648de8ddd2b0d97ed9e70f',
+			'a181c2fe7c505919cb269d44365088fc',
+			'c4c69a272ac9ac42851a071c5ccab8fb',
+			'a1615a76b96754448df29f80e7f04c95',
+			'a6ba50c21c5abdaeac32f131dfdc5075',
+			'37e52ce5c8726ea3bb488bbccaeff9ea',
+			'e2c3909f58a7c9db1e9403a6d81f6989',
+			'6a8f5b5a5dcbd8981293ac014f7577b7',
+			'83d22cdcdac7b5ec4cdc817934c8c3be',
+			'b11015c6ed3895691783d0bf7130bae8',
+			'92f549ef95fe78402f7e74856f0b4545',
+			'7dd206f9e2a846a554cce478b126424c',
+			'188a8acba8fda7eaf7f9a3bb9a254093',
+			'9337c0025985169b160feffe6100e5f1',
+			'60f351c4951d1f847518744df034193d',
+			'bd2e697a70d454eca92d7a4ea743372b',
+			'a026c95f052fc70bb2d8647de7f02cb2',
+			'ebae18fa4290f7fb3ba082b29d79fd9e',
+			'add9e4fc71ff5edfc62c824d66003d12',
+			'58a42434a07033ea7b174144dede47f1',
+			'c3a15103c85994aa5025b7939b3e6b9d',
+			'05126e2591c0d0390bdc0de2a97d9d97',
+			'3611ef9813e2628495a78c9fda236597',
+			'fb5e53ca8fdbde082787b2c9acdcc167',
+			'62f9ac73bae800442142afe273bfce8a',
+			'a16b2cd458cb25ed258dd23966b1f3e7',
+			'648b15c9113e9e9314c4cfa9c76d6b52',
+			'436628d1681020de436c20f9be42395c',
+			'd55bacf240b12c9f1c6cb63cb9f3eefd',
+			'691052727c2774f4635ccb7531b1b019',
+			'6b58c5b5a5cfdc4debd2193950c00b99',
+			'968315dbd8105b75e8d8696ca2f37378',
+			'672522ebd1a9d6889c2c40a5297bc23d'
+		];
+
+		// Check if the MD5 hash of the invite code is not in the validInviteCodes array
+		if (!validInviteCodes.includes(MD5($('#invite_code').val()))) {
+			$('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> Your invite code is incorrect.'));
+		} else {
+			$.post('https://script.google.com/macros/s/AKfycbxUsDhNqUH05Rovny3s6nTgLBT0v1OUzK_3CcR8i5OcGeEZOdQ-wEua_W1678iYrq6p/exec', data)
+				.done(function (data) {
+					console.log(data);
+					if (data.result === "error") {
+						$('#alert-wrapper').html(alert_markup('danger', data.message));
+					} else {
+						$('#alert-wrapper').html('');
+						$('#rsvp-modal').modal('show');
+					}
+				})
+				.fail(function (data) {
+					console.log(data);
+					$('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> There is some issue with the server.'));
+				});
+		}
+	});
 
 });
 
