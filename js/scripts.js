@@ -256,7 +256,7 @@ $(document).ready(function () {
 			'9f0abfc4a0c7c336000ab237d5f197c5',
 			'74c43b7ec689955c9c1517294e92500f',
 			'4cdddb1de7e4acf8004e425b7b7d2ec2',
-			'b6b036a949b91b7b14212fd44e310e28',
+			'50d3cb24e9ddd3b2e3d251ce71d48cf0',
 			'dddc947374a3f6c5e3ef7b27acddda29',
 			'1ac9613839f839129173664797c6db5f',
 			'322feb33d237c08213e5f41804c958d4',
@@ -268,7 +268,7 @@ $(document).ready(function () {
 			'ad91c48bab41c40171efbe22239fd732',
 			'b7fb6ab8060c1b877e0cedbb4680f3c9',
 			'c482a49957bb3b224ac65ffea95fa696',
-			'12ef80caa22b768cb6f597f1812961ed',
+			'b4a4ca74e945b2b9173a273bd51c812d',
 			'bae8beeaa951902e0c2b6a4b7564b338',
 			'ce017c64a425599b5215b5de0e06e5aa',
 			'f86782eef82530d5d5cc4a91334c6e14',
@@ -276,9 +276,9 @@ $(document).ready(function () {
 			'acd4da919df3f02a34886cade023f102',
 			'b2d3267dd31efbc378ad581b5a3a7fd4',
 			'03e546ff1332f6ad51dcf146584be69b',
-			'd3a8518bb4fc0084895949fc6cf0a389',
+			'5834c7e02ff9fba190f2e9932e36f597',
 			'e5db8884451f2d87f20767fdfa091b76',
-			'4cdddb1de7e4acf8004e425b7b7d2ec2',
+			'a44bf857f3536b4c6963e697ebf89ab5',
 			'45c88cb788b3241ef73190071fa6a75d',
 			'619ac4c6eb3cdcfbbc21ae96cc3b2d35',
 			'c734ac41383556f8699935c620cfa310',
@@ -322,7 +322,7 @@ $(document).ready(function () {
 		if (!validInviteCodes.includes(MD5($('#invite_code').val()))) {
 			$('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> Your invite code is incorrect.'));
 		} else {
-			$.post('https://script.google.com/macros/s/AKfycbxUsDhNqUH05Rovny3s6nTgLBT0v1OUzK_3CcR8i5OcGeEZOdQ-wEua_W1678iYrq6p/exec', data)
+			$.post('https://script.google.com/macros/s/AKfycbwLPlM5QzO7dPnXcyfXrcFjLe5i5q0dhal7maJoZfgVhqg_66rYgERe4t3QXD5NGmCa/exec', data)
 				.done(function (data) {
 					console.log(data);
 					if (data.result === "error") {
