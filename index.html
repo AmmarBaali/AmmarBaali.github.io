@@ -159,7 +159,7 @@
                 <div class="wp3">
                     <p><strong>Ceremony</strong></p>
 
-                    <h5>Ceremony <span class="time">5PM - 6PM</span></h5>
+                    <h5>Ceremony <span class="time">4PM - 6PM</span></h5>
                     <p>The ceremony will be held outdoors, weather permitting. In the event of rain, we will move the celebration indoors. The ceremony is set to last approximately one hour, during which Ammar and Ella will exchange vows and make a promise to love and cherish each other for the rest of their lives. This heartfelt occasion will be a beautiful celebration of their love, surrounded by family and friends. </p>
                 </div>
                 <div class="wp5">
@@ -185,7 +185,7 @@ Once dinner is complete, the dance floor will come alive!</p>
         <div class="row section-padding">
             <div class="col-md-4 col-md-offset-4 text-center">
                 <a class="btn btn-accent btn-small" data-toggle="modal" data-target="#dc-modal">
-                    <i class="fa fa-barcode"></i>&nbsp;&nbsp;Dress code
+                    <i class="fa fa-barcode"></i>&nbsp;&nbsp;More info
                 </a>
             </div>
         </div>
@@ -201,39 +201,58 @@ Once dinner is complete, the dance floor will come alive!</p>
                 <div class="modal-body">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span>
                     </button>
-                    <h3 class="text-center section-padding">Ugh... dress codes?</h3>
-                    <h5>Mehndi <span class="time">1PM - 5PM</span></h5>
+                    <h3 class="text-center section-padding">Ok... More info</h3>
                     <p>
-                        <strong>Formal</strong>
+                        <h4>What’s the scoop?</h4>
                         <br>
-                        Ladies can wear something
-                        <a href="https://www.pinterest.com/ramswarooppatra/mehndi-dress-for-women/">bright & vivid</a>
-                        and gentlemen can be on
-                        their <a href="https://www.pinterest.com/ramswarooppatra/mehndi-dress-for-men/">vibrant
-                        kurtas</a> with pants or pyjamas along with an optional shawl.
+                        The ceremony kicks off at 5PM and wraps up at 6PM. Please don’t be that person that makes things awkward by arriving after the ceremony has started.
                     </p>
-                    <h5>Cocktail Night <span class="time">7PM - 12AM</span></h5>
                     <p>
-                        <strong>Western attire</strong>
+                        <h4>Parking situation:</h4>
                         <br>
-                        A semi-formal look that is contemporary & fashionable which is not too prim & proper is the best
-                        to pull off this night. You can see some pins for
-                        <a href="https://www.pinterest.com/ramswarooppatra/cocktail-night-outfit-for-women/">ladies</a>
-                        & <a href="https://www.pinterest.com/ramswarooppatra/cocktail-night-outfit-for-men/">gents</a>.
+                        Good news! There’s free parking on-site for all guests. Just follow the signs (or the scent of cake)!
                     </p>
-                    <h5>Wedding <span class="time">6PM-12AM</span></h5>
                     <p>
-                        <strong>Indo-western</strong>
+                        <h4>Traveling from afar?</h4>
                         <br>
-                        Ladies can flaunt their unconventional sarees,
-                        <a href="https://www.pinterest.com/ramswarooppatra/indo-western-lehengas/">lehengas</a>,
-                        <a href="https://www.pinterest.com/ramswarooppatra/indo-western-anarkalis/">anarkalis</a>,
-                        dresses and the list
-                        goes on whereas gentlemen can wear any kind of suit or just blazer. If you don't like to wear a
-                        suit/blazer, you can do a <a
-                            href="https://www.pinterest.com/ramswarooppatra/high-neck-jackets-for-men/">high-neck
-                        (band gala) waistcoat & shirt</a> combo.
+                        If you’re jetting in from Toronto, SF, LA, or even the North Pole, reach out to Emmanuelle for sweet deals on accommodations. Find her contact info on this page.
                     </p>
+                    <p>
+                        <h4>Need a countdown?</h4>
+                        <br>
+                        We got you: <strong><span id="demo"></span></strong>
+                    </p>
+
+                    <script>
+                    // Set the date we're counting down to
+                    var countDownDate = new Date(Date.UTC(2025, 5, 28, 21, 0, 0)).getTime();
+
+                    // Update the count down every 1 second
+                    var x = setInterval(function() {
+
+                      // Get today's date and time
+                      var now = new Date().getTime();
+
+                      // Find the distance between now and the count down date
+                      var distance = countDownDate - now;
+
+                      // Time calculations for days, hours, minutes and seconds
+                      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                      // Display the result in the element with id="demo"
+                      document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+                      + minutes + "m " + seconds + "s ";
+
+                      // If the count down is finished, write some text
+                      if (distance < 0) {
+                        clearInterval(x);
+                        document.getElementById("demo").innerHTML = "---";
+                      }
+                    }, 1000);
+                    </script>
                 </div>
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
