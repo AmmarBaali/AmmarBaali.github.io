@@ -249,7 +249,6 @@ $(document).ready(function () {
         } else {
             $.post("https://script.google.com/macros/s/AKfycbzbsLG4-Ijj0AKmiD-HkUH_7ob8JP2-H0To6mQLuzxlRur9r-e18MqRIo6GX9TYlnU/exec", data)
                 .done(function (data) {
-                    console.log(data);
                     if (data.result === "error") {
                         $("#alert-wrapper").html(alert_markup("danger", data.message));
                     } else {
