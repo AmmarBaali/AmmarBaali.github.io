@@ -141,7 +141,7 @@ $(document).ready(function () {
     $("#rsvp-form").on("submit", function (e) {
         e.preventDefault();
         var data = $(this).serialize();
-        $("#alert-wrapper").html(alert_markup("info", "<strong>Just a sec!</strong> We are saving your details."));
+        $("#alert-wrapper").html(alert_markup("info", "<strong>Please wait...</strong>"));
         var validInviteCodes = [
             "b0e53b10c1f55ede516b240036b88f40",
             "1ef062bf592693626c0c29cbfdd253b8",
@@ -247,7 +247,7 @@ $(document).ready(function () {
         if (!validInviteCodes.includes(MD5($("#invite_code").val()))) {
             $("#alert-wrapper").html(alert_markup("danger", "<strong>Sorry!</strong> Your invite code is incorrect."));
         } else {
-            $.post("https://script.google.com/macros/s/AKfycbzbsLG4-Ijj0AKmiD-HkUH_7ob8JP2-H0To6mQLuzxlRur9r-e18MqRIo6GX9TYlnU/exec", data)
+            $.post("https://script.google.com/macros/s/AKfycbx2WQzA6zarbeIMwOoc89fvhxvKHT5BpZePd2WdFkmvuzMxsyhLt9Cf-Cln8GqDHHxT/exec", data)
                 .done(function (data) {
                     if (data.result === "error") {
                         $("#alert-wrapper").html(alert_markup("danger", data.message));
