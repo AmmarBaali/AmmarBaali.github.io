@@ -522,7 +522,7 @@ Once dinner is complete, the dance floor will come alive!</p>
     <form id="rsvp-form" class="rsvp-form" action="" method="POST">
         <div class="form-input-group">
             <i class="fa fa-user"></i>
-            <input name="name" class="" placeholder="Your name" required>
+            <input name="name" class="" value="Your name" required onfocus="if(this.value=='Your name') this.value='';" onblur="if(this.value=='') this.value='Your name';">
         </div>
         <div class="form-input-group">
             <i class="fa fa-envelope"></i>
@@ -545,7 +545,7 @@ Once dinner is complete, the dance floor will come alive!</p>
         </div>
         <div class="form-input-group">
             <i class="fa fa-key"></i>
-            <input type="number" pattern="\d*" name="invite_code" id="invite_code" class="" min="0" placeholder="Your invite code" required>
+            <input type="text" name="invite_code" id="invite_code" class="" value="Your invite code" required onfocus="if(this.value=='Your invite code') this.value='';" onblur="if(this.value=='') this.value='Your invite code';">
         </div>
         <div class="col-md-12" id="alert-wrapper"></div>
         <button class="btn-fill rsvp-btn">
@@ -563,7 +563,7 @@ Once dinner is complete, the dance floor will come alive!</p>
             foodSelect.value = ""; // Reset food selection
         } else {
             foodOptions.style.display = 'none';
-            foodSelect.value = "Vegetarian"; // Default to Chicken
+            foodSelect.value = "Vegetarian"; // Default to Vegetarian
         }
     });
 </script>
