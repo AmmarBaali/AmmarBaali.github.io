@@ -527,7 +527,7 @@ Once dinner is complete, the dance floor will come alive!</p>
         <div class="form-input-group">
             <i class="fa fa-envelope"></i>
             <select name="response" class="custom-select" required id="response-select">
-                <option value="" disabled selected>Are you coming?</option>
+                <option value="" disabled selected>Will you attend?</option>
                 <option value="Yes">Yes</option>
                 <option value="No">No</option>
             </select>
@@ -535,7 +535,7 @@ Once dinner is complete, the dance floor will come alive!</p>
         <div id="food-options" style="display: none;">
             <div class="form-input-group">
                 <i class="fa fa-cutlery"></i>
-                <select name="food_options" class="custom-select" required>
+                <select name="food_options" class="custom-select" required id="food-select">
                     <option value="" disabled selected>Select a food option</option>
                     <option value="Chicken">Mediterranean style stuffed chicken supreme, masala sauce. Served on sauteed rapini with garlic & Dauphinoise potatoes</option>
                     <option value="Beef">Braised Angus beef short ribs in a Porto and shallot sauce. Served on sauteed rapini with garlic & Dauphinoise potatoes</option>
@@ -557,10 +557,13 @@ Once dinner is complete, the dance floor will come alive!</p>
 <script>
     document.getElementById('response-select').addEventListener('change', function() {
         var foodOptions = document.getElementById('food-options');
+        var foodSelect = document.getElementById('food-select');
         if (this.value === 'Yes') {
             foodOptions.style.display = 'block';
+            foodSelect.value = ""; // Reset food selection
         } else {
             foodOptions.style.display = 'none';
+            foodSelect.value = "Vegetarian"; // Default to Chicken
         }
     });
 </script>
@@ -582,8 +585,6 @@ Once dinner is complete, the dance floor will come alive!</p>
         margin-bottom: 15px; /* Add some spacing between input groups */
     }
 </style>
-
-
 
 
 
