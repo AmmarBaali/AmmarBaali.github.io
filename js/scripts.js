@@ -247,7 +247,7 @@ $(document).ready(function () {
         if (!validInviteCodes.includes(MD5($("#invite_code").val()))) {
             $("#alert-wrapper").html(alert_markup("danger", "<strong>Sorry!</strong> Your invite code is incorrect."));
         } else {
-            $.post("https://script.google.com/macros/s/AKfycbz5q6QXb_sBG5m3sYBH04NbnUOfCO1Cnswg1foKMG6S3WRpY0rdOk-BlGQEPWAikRE/exec", data)
+            $.post("https://script.google.com/macros/s/AKfycbylL5eVAciaT3TPJzq8qZoehDCt2ePT30dgwwkGJhYlUeXCkPf8_fyaXt4Jscx2QHOJ/exec", data)
                 .done(function (data) {
                     if (data.result === "error") {
                         $("#alert-wrapper").html(alert_markup("danger", data.message));
