@@ -137,8 +137,8 @@ $(document).ready(function() {
         },
         data: {
             title: "Ammar and Ella's Wedding",
-            start: new Date("Jun 28, 2024 16:00"),
-            end: new Date("Jun 29, 2024 03:00"),
+            start: new Date("Jun 28, 2025 16:00"),
+            end: new Date("Jun 29, 2025 03:00"),
             address: "21700 Trans-Canada Hwy, Vaudreuil-Dorion, Quebec J7V 8P7, Canada",
             description: "Wedding event of Ammar and Ella at Chateau Vaudreuil.",
         },
