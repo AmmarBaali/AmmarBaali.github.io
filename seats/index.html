@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Seating Chart</title>
+    <style>
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+        
+        header {
+            background-image: url('wedding-header.jpg'); /* Background image */
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+        
+        h1 {
+            font-size: 3rem;
+            text-align: center;
+            position: relative; /* Make the title position relative for better layering */
+            z-index: 1; /* Bring the title above the background image */
+        }
+        
+        .table {
+            border-collapse: collapse;
+            margin: 40px auto;
+            width: 80%;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .table th, .table td {
+            border: none;
+            padding: 15px;
+            text-align: center;
+        }
+        
+        .table th {
+            background-color: #d8c9a3; /* Dark beige color */
+            color: black;
+            font-weight: bold;
+        }
+        
+        .table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        .table td {
+            vertical-align: top;
+        }
+        
+        .table td:first-child {
+            font-weight: bold;
+        }
+
+        .image-container {
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .image-container h2 {
+            color: #d8c9a3; /* Dark beige color */
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        footer {
+            background-color: #d8c9a3; /* Dark beige color */
+            color: black;
+            padding: 20px;
+            text-align: center;
+            font-size: 0.9rem;
+            margin-top: 40px;
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Wedding Seating Chart</h1>
+    </header>
+
+    <table class="table" id="seating-chart">
+        <thead>
+            <tr>
+                <th rowspan="2">Table Number</th>
+                <th colspan="9">Guests</th>
+            </tr>
+            <tr>
+                <th>Seat 1</th>
+                <th>Seat 2</th>
+                <th>Seat 3</th>
+                <th>Seat 4</th>
+                <th>Seat 5</th>
+                <th>Seat 6</th>
+                <th>Seat 7</th>
+                <th>Seat 8</th>
+                <th>Seat 9</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><b>Table 1</b></td>
+                <td>Vajiheh Mortazavi</td>
+                <td>Mohammad H Fathi</td>
+                <td>Bahar Fathi</td>
+                <td>Peggy Fathi</td>
+                <td>Amir Motamedi</td>
+                <td>Emma Abbassian</td>
+                <td>Noah Abbassian</td>
+                <td class="open-seat">OpenSeat T1S8</td>
+                <td class="open-seat">OpenSeat T1S9</td>
+            </tr>
+            <tr>
+                <td><b>Table 2</b></td>
+                <td>Hana Kudsi</td>
+                <td>Yasser Baali</td>
+                <td>Dania Baali</td>
+                <td>Assad El Malki</td>
+                <td>Roula Baali</td>
+                <td>Husni Hajibik</td>
+                <td>Julia Hajibik</td>
+                <td>Emilia Hajibik</td>
+                <td>Sam Hajibik</td>
+            </tr>
+            <tr>
+                <td><b>Table 3</b></td>
+                <td>Lina Kudsi</td>
+                <td>Bill Nasra</td>
+                <td>Lama Baali</td>
+                <td>Patrick Moubarak</td>
+                <td>Joanna Baghdane</td>
+                <td>Basel Arafe</td>
+                <td>Sarab Arafe</td>
+                <td>Mohanad Arafe</td>
+                <td class="open-seat">OpenSeat T3S9</td>
+            </tr>
+            <tr>
+                <td><b>Table 4</b></td>
+                <td>Hoda Albaali</td>
+                <td>Haitham Sumaya</td>
+                <td>Ibrahim Sumaya</td>
+                <td>Leila Houbby</td>
+                <td>Bashar Sumaya</td>
+                <td>Nour Sumaya</td>
+                <td>Talal Sumaya</td>
+                <td class="open-seat">OpenSeat T4S8</td>
+                <td class="open-seat">OpenSeat T4S9</td>
+            </tr>
+            <tr>
+                <td><b>Table 5</b></td>
+                <td>Andreea Milasan</td>
+                <td>Gabriel Moreau</td>
+                <td>Sara Urquia Gomez</td>
+                <td>Leonid Plaksienko</td>
+                <td>Kristina Kekesi-Lafrance</td>
+                <td>Arad Mojtahedi</td>
+                <td>Michael Chung Wing</td>
+                <td>Amanda Garofalo</td>
+                <td>Andy Balaj</td>
+            </tr>
+            <tr>
+                <td><b>Table 6</b></td>
+                <td>Osama Salman</td>
+                <td>Ali Salman</td>
+                <td>Yev Plaksienko</td>
+                <td>Sandeep Sandhu</td>
+                <td>An Na</td>
+                <td>Bryan Li</td>
+                <td>Ha Mi Nguyen</td>
+                <td>David Malvar</td>
+                <td>Simon Pouliot</td>
+            </tr>
+            <tr>
+                <td><b>Table 7</b></td>
+                <td>Rachel Robinson</td>
+                <td>Monika Rusu</td>
+                <td>Sam Samsami</td>
+                <td>Javad</td>
+                <td>Asieh Shaghayegh</td>
+                <td>Peyman Abedzadeh</td>
+                <td>Saman's wife (Maryam)</td>
+                <td>Soroush Pishavar</td>
+                <td class="open-seat">OpenSeat T7S9</td>
+            </tr>
+            <tr>
+                <td><b>Table 8</b></td>
+                <td>Mahtab Naserifar</td>
+                <td>Bita Baakhlagh</td>
+                <td>Kourosh Ahangar</td>
+                <td>Shayan Kousha</td>
+                <td>Bahar Shadrooh</td>
+                <td>Ransleigh Baird</td>
+                <td class="open-seat">OpenSeat T8S7</td>
+                <td class="open-seat">OpenSeat T8S8</td>
+                <td class="open-seat">OpenSeat T8S9</td>
+            </tr>
+            <tr>
+                <td><b>Table 9</b></td>
+                <td>Arshia Hirbod</td>
+                <td>Alex Tsanev</td>
+                <td>Madeleine Heaven</td>
+                <td class="open-seat">OpenSeat T9S4</td>
+                <td class="open-seat">OpenSeat T9S5</td>
+                <td class="open-seat">OpenSeat T9S6</td>
+                <td class="open-seat">OpenSeat T9S7</td>
+                <td class="open-seat">OpenSeat T9S8</td>
+                <td class="open-seat">OpenSeat T9S9</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="seat-change-container">
+        <h2 style="color: #d8c9a3; text-align: center;">Make a Seat Change</h2>
+        <form id="seat-change-form" style="display: flex; flex-direction: column; align-items: center;">
+            <label for="guest-name-1">Enter Guest Name #1:</label>
+            <input type="text" id="guest-name-1" name="guest-name-1" style="margin-bottom: 15px; padding: 10px; width: 80%;"/>
+            
+            <label for="guest-name-2">Enter Guest Name #2:</label>
+            <input type="text" id="guest-name-2" name="guest-name-2" style="margin-bottom: 15px; padding: 10px; width: 80%;"/>
+            
+            <button type="submit" style="background-color: #d8c9a3; color: black; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">
+                Submit
+            </button>
+        </form>
+    </div>
+	
+	<div class="image-container">
+        <h2>Hall Layout</h2>
+        <img src="TableLayout.jpg" alt="Table Layout">
+    </div>
+
+    <footer>
+        For any special seating needs or assistance, please inform Yevgeni Plaksienko.
+    </footer>
+    
+    <script>
+        document.getElementById('seat-change-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting
+
+            // Get guest names from the input fields
+            const guestName1 = document.getElementById('guest-name-1').value.trim();
+            const guestName2 = document.getElementById('guest-name-2').value.trim();
+
+            // Find the table cells containing the guest names
+            const seat1 = Array.from(document.querySelectorAll('#seating-chart td')).find(td => td.textContent.trim() === guestName1);
+            const seat2 = Array.from(document.querySelectorAll('#seating-chart td')).find(td => td.textContent.trim() === guestName2);
+
+            // Swap the names if both are found
+            if (seat1 && seat2) {
+                const temp = seat1.innerHTML;
+                seat1.innerHTML = seat2.innerHTML;
+                seat2.innerHTML = temp;
+
+                alert("Seat changes made successfully!\n\nOnce you are done making changes, take a screenshot and verify that everything looks correct.\n\nOnce confirmed, send the screenshot to Ammarito.");
+            } else {
+                alert('One or both guest names not found.');
+            }
+
+            // Clear input fields
+            document.getElementById('guest-name-1').value = '';
+            document.getElementById('guest-name-2').value = '';
+        });
+    </script>
+</body>
+</html>
