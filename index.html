@@ -417,122 +417,19 @@
     </div>
 </section>
 
+
+
 <section class="rsvp text-center" id="rsvp">
-
-    <div id="rsvp-modal" class="modal fade" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span>
-                    </button>
-                    <div class="section-padding">
-                        <h3>Thank you!</h3>
-                        <p>We are glad to see you join us on our big day.</p>
-                        <div id="add-to-cal"></div>
-                    </div>
-                </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
-
-    <div id="rsvp-modal-not-coming" class="modal fade" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span>
-                    </button>
-                    <div class="section-padding">
-                        <h3>Thank you!</h3>
-                        <p>We're sorry to hear that you won't be joining us.</p>
-                        <div id="add-to-cal"></div>
-                    </div>
-                </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
-
-
-
-
     <div class="container">
         <div class="row">
-
-<div class="col-md-6 col-md-offset-3">
-    <h3>What are you waiting for?</h3>
-    <p style="color: grey;">We ask that you RSVP by June 2nd, 2025. Your invite code is guaranteed to be valid until that date. We want to ensure that everyone has the opportunity to join us, so please respond early to secure your spot!</p>
-    <form id="rsvp-form" class="rsvp-form" action="" method="POST">
-        <div class="form-input-group">
-            <i class="fa fa-user"></i>
-            <input name="name" class="" value="Your name" required onfocus="if(this.value=='Your name') this.value='';" onblur="if(this.value=='') this.value='Your name';">
-        </div>
-        <div class="form-input-group">
-            <i class="fa fa-envelope"></i>
-            <select name="response" class="custom-select" required id="response-select">
-                <option value="" disabled selected>Will you attend?</option>
-                <option value="Yes">Yes</option>
-                <option value="No">No</option>
-            </select>
-        </div>
-        <div id="food-options" style="display: none;">
-            <div class="form-input-group">
-                <i class="fa fa-cutlery"></i>
-                <select name="food_options" class="custom-select" required id="food-select">
-                    <option value="" disabled selected>Select a food option</option>
-                    <option value="Chicken">Mediterranean style stuffed chicken supreme, masala sauce. Served on sauteed rapini with garlic & Dauphinoise potatoes</option>
-                    <option value="Beef">Braised Angus beef short ribs in a Porto and shallot sauce. Served on sauteed rapini with garlic & Dauphinoise potatoes</option>
-                    <option value="Vegetarian">Vegetarian</option>
-                </select>
+            <div class="col-md-6 col-md-offset-3">
+                <h3>RSVP Closed</h3>
+                <p style="color: grey;">Thank you for your interest in joining us for our wedding. The RSVP window has now closed. We hope to see you on our special day!</p>
             </div>
-        </div>
-        <div class="form-input-group">
-            <i class="fa fa-key"></i>
-            <input type="tel" name="invite_code" id="invite_code" class="" value="Your invite code" required onfocus="if(this.value=='Your invite code') this.value='';" onblur="if(this.value=='') this.value='Your invite code';">
-        </div>
-        <div class="col-md-12" id="alert-wrapper"></div>
-        <button class="btn-fill rsvp-btn">
-            Submit
-        </button>
-    </form>
-</div>
-
-<script>
-    document.getElementById('response-select').addEventListener('change', function() {
-        var foodOptions = document.getElementById('food-options');
-        var foodSelect = document.getElementById('food-select');
-        if (this.value === 'Yes') {
-            foodOptions.style.display = 'block';
-            foodSelect.value = ""; // Reset food selection
-        } else {
-            foodOptions.style.display = 'none';
-            foodSelect.value = "Vegetarian"; // Default to Vegetarian
-        }
-    });
-</script>
-
-<style>
-    .custom-select {
-        width: 100%; /* Use full width for better alignment */
-        height: 53px; 
-        overflow: hidden; 
-        text-overflow: ellipsis; 
-        white-space: nowrap; 
-        border: none; 
-        outline: none; 
-        padding: 10px; 
-        padding-left: 65px;
-        background-color: transparent;
-    }
-    .form-input-group {
-        margin-bottom: 15px; /* Add some spacing between input groups */
-    }
-</style>
-
-
-
-
         </div>
     </div>
 </section>
+
 
 <footer>
     <div class="container">
